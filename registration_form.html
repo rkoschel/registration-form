@@ -20,7 +20,7 @@
 
 			entry.find("[body=true]").append('<button data-toggle="tooltip" title="remove participant" onclick="removeEntry(' + entryNumber + ')" type="button" class="btn btn-danger removeButton"><i class="fa fa-minus-square-o"> remove</i></button>');
 			
-			// this is an alternative way to provide a remove functionality
+			// FIXME#2: this is an alternative way to provide a remove functionality
             //entry.find("[header=true]").append('<a onclick="removeEntry(' + entryNumber + ')" href="#" class="close" data-dismiss="alert" aria-label="close" data-toggle="tooltip" title="remove participant">&times;</a>');
             
 			$("#entries").append(entry);
@@ -32,11 +32,11 @@
 			entry.fadeOut("fast");
 			entry.attr("closed", true);
 			var parentEntry = $("#entries");
-			parentEntry.removeChild(entry); // FIXME: this has no effect
+			parentEntry.removeChild(entry); // FIXME#1: this has no effect
 		}
 
         function submitAllEntries(){
-            // TODO: post all non closed entry elements to the server and persist to the DB
+            // TODO#3: post all non closed entry elements to the server and persist to the DB
         }
 	</script>
 	<style>
